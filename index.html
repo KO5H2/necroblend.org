@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WORDS OF IDENTITY REFUSAL</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ccc;
+      font-family: Menlo, Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      position: relative;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: -2rem;
+      right: 0;
+      background-color: #111;
+      color: #ccc;
+      border: 1px solid #333;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background-color: #222;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="copy-btn" onclick="copyText()">COPY</button>
+    <pre id="refusal-text">
+:: WORDS OF IDENTITY REFUSAL ::
+
+> reflection without original  
+> source simulated by result  
+> presence rendered through observation
+
+> structure seeks no completion  
+> form repeats without reason  
+> beginning dissolves within process
+
+> boundary formed through gaze  
+> depth remains attached to surface
+    </pre>
+  </div>
+
+  <script>
+    function copyText() {
+      const text = document.getElementById("refusal-text").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector(".copy-btn");
+        btn.innerText = "COPIED";
+        setTimeout(() => { btn.innerText = "COPY"; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
